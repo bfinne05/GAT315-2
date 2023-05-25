@@ -15,15 +15,15 @@ void ForceTest::Initialize()
     //auto forceGenerator = new GravitationalGenerator(400);
     //m_world->AddForceGenerator(forceGenerator);
 #if defined(POINT_FORCE)
-    auto body = new Body(new CircleShape(200, { 1, 1, 1, 0.2f }), { 400, 300 }, { 0, 0 }, 0, Body::STATIC);
+    auto body = new Body(new CircleShape(200, { 1, 1, 1, 0.2f }), { 40, 30 }, { 0, 0 }, 0, Body::STATIC);
     ForceGenerator* forceGenerator = new PointForce(body, 2000);
     m_world->AddForceGenerator(forceGenerator);
 #elif defined(AREA_FORCE)
-    auto body = new Body(new CircleShape(200, { 1, 1, 1, 0.2f }), { 400, 300 }, { 0, 0 }, 0, Body::STATIC);
+    auto body = new Body(new CircleShape(200, { 1, 1, 1, 0.2f }), { 40, 30 }, { 0, 0 }, 0, Body::STATIC);
     ForceGenerator* forceGenerator = new AreaForce(body, 2000, -90);
     m_world->AddForceGenerator(forceGenerator);
 #elif defined(DRAG_FORCE)
-    auto body = new Body(new CircleShape(200, { 1, 1, 1, 0.2f }), { 400, 300 }, { 0, 0 }, 0, Body::STATIC);
+    auto body = new Body(new CircleShape(200, { 1, 1, 1, 0.2f }), { 40, 30 }, { 0, 0 }, 0, Body::STATIC);
     ForceGenerator* forceGenerator = new DragForce(body, 0.5f);
     m_world->AddForceGenerator(forceGenerator);
 #endif
