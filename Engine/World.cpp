@@ -20,9 +20,11 @@ World::~World()
 }
 void World::Step(float dt)
 {
+	std::vector<Body*> bodies(m_bodies.begin(), m_bodies.end()); //check this out later if not working
+	if (bodies.empty()) return;
+
 	for (auto joint : m_joints) joint->Step(dt);
 
-	std::vector<Body*> bodies(m_bodies.begin(), m_bodies.end()); //check this out later if not working
 	if (!m_bodies.empty() && !m_forceGenerators.empty())//<check that m_bodies is not empty and m_forceGenerators is not empty>)
 	{
 		for (auto forceGenerator : m_forceGenerators)

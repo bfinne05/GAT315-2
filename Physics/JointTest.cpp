@@ -5,7 +5,7 @@
 #include "Joint.h"
 
 #define SPRING_STIFFNESS 100
-#define SPRING_LENGTH 90
+#define SPRING_LENGTH 9
 #define BODY_DAMPING 50
 #define CHAIN_SIZE 3
 
@@ -29,7 +29,7 @@ void JointTest::Initialize()
 		m_world->AddBody(bodyA);
 
 		//create right node
-		auto bodyB = new Body(new CircleShape(20, { 1, 1, 1, 1 }), { 490, 200 }, { 0, 0 }, 1, Body::DYNAMIC);
+		auto bodyB = new Body(new CircleShape(0.5, { 1, 1, 1, 1 }), { 49, 20 }, { 0, 0 }, 1, Body::DYNAMIC);
 		//bodyB->gravityScale = 250;
 		bodyB->damping = BODY_DAMPING;
 		m_world->AddBody(bodyB);

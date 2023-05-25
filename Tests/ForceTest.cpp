@@ -37,11 +37,11 @@ void ForceTest::Update()
 
     if (m_input->GetMouseButton(0))
     {
-        glm::vec2 velocity = randomUnitCircle() * randomf(100, 200);
+        glm::vec2 velocity = randomUnitCircle() * randomf(1, 2);
 
-        float size = randomf(1, 8);
+        float size = randomf(0.1f, 1);
         glm::vec4 color{ randomf(), randomf(), randomf(), 1 };
-        auto body = new Body(new CircleShape(size * 2, color), position, velocity, size);
+        auto body = new Body(new CircleShape(size, color), position, velocity, size);
         body->damping = 1;
         body->gravityScale = 0;
         m_world->AddBody(body);
